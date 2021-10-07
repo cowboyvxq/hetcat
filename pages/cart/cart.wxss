@@ -8,7 +8,7 @@
 }
 .review_address_row .user_info {
   display: flex;
-  border-bottom: solid #ccc 4rpx;
+  border-bottom: solid #ccc 2rpx;
   padding: 30rpx;
 }
 .review_address_row .user_info .info {
