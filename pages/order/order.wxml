@@ -1,0 +1,29 @@
+<Tabs Tabs="{{Tabs}}" bindtabsChange="tabsItemChange">
+  <view class="user_info">
+    <view class="info">
+      <view class="info_name">{{address.userName}}</view>
+      <view class="info_address">{{address.all}}</view>
+    </view>
+    <view class="phone">{{address.telNumber}}</view>
+  </view>
+  <view class="collect_content">
+    <view class="collect_main">
+      <navigator wx:for="{{orders}}" wx:key="goods_id" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+        <view class="goods_image">
+          <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
+        </view>
+        <view class="goods_info">
+          <view class="info_name">{{item.goods_name}}</view>
+          <view class="amount">
+          <view class="info_price">¥{{item.goods_price}}</view>
+          <view class="total">x{{item.num}}</view>
+          </view>
+          <view class="pay_text">
+          <view class="await_pay">待支付</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+<view class="timeout">请在{{minutes}}分{{seconds}}秒内支付订单，否则订单取消</view>
+</Tabs>

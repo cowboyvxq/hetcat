@@ -1,0 +1,203 @@
+.review_address_row {
+  .address_btn {
+    button {
+      width: 50%;
+      margin-top: 40rpx;
+      border: none!important;
+      color: #fff!important;
+      background-color: rgb(235, 134, 181);
+      margin-bottom: 30rpx;
+    }
+  }
+
+  .user_info {
+    display: flex;
+    border-bottom: solid #ccc 4rpx;
+  padding: 30rpx;
+    .info {
+      flex: 6;
+
+      .info_address {
+        font-size: 30rpx;
+        color: #888;
+      }
+
+      .phone {
+        flex: 2;
+        text-align: right;
+      }
+    }
+  }
+}
+
+// 购物车内容
+.cart {
+  padding-right: 20rpx;
+  .cart_title {
+    padding: 20rpx;
+    font-size: 36rpx;
+    color: var(--themeColor);
+    border-top: 1rpx solid currentColor;
+    border-bottom: 1rpx solid currentColor;
+
+  }
+
+  .cart_main {
+    padding-bottom: 90rpx;
+
+    .cart_item {
+      display: flex;
+      padding: 10rpx;
+      border-bottom: 1rpx solid #ccc;
+      padding-bottom: 20rpx;
+      .cart_chk_wrap {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cart_img_wrap {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        image {
+          width: 80%;
+        }
+        .cart_pic {
+          width: 145rpx;
+          height: 160rpx;
+        }
+      }
+
+      .cart_info_wrap {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .info_name {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          color: #666;
+        }
+
+        .info_price_wrap {
+          display: flex;
+          justify-content: space-between;
+          .price {
+            color: var(--themeColor);
+            font-size: 34rpx;
+          }
+          /*主容器*/
+        .stepper {
+          width: 80px;
+          height: 26px;
+          /*给主容器设一个边框*/
+          border: 1px solid #ccc;
+          border-radius: 6rpx;
+          display: flex;
+          /*加号和减号*/
+          text {
+            width: 50rpx;
+            line-height: 26px;
+            text-align: center;
+            &.normal {
+              color: black;
+            }
+          }
+         
+          input {
+            width: 40px;
+            height: 26px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 12px;
+            /*给中间的input设置左右边框即可*/
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+          }
+         
+        }
+
+        }
+      }
+    }
+    .tips_content {
+      text-align: center;
+      margin-top: 50rpx;
+      .cart-img {
+        width: 450rpx;
+      }
+      .shopping {
+        height: 70rpx;
+        line-height: 65rpx;
+        margin: 100rpx auto;
+        font-size: 30rpx;
+        width: 420rpx;
+        border: solid rgb(199, 197, 197) 2px;
+        color: rgb(185, 184, 184);
+        border-radius: 10rpx;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//结算窗口
+.footer_tool {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #ccc;
+ align-items: center;
+  .all_chk_warp {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .total_price_warp {
+    padding: 0 20rpx;
+    flex: 5;
+    text-align: right;
+
+    .total_price {
+      text.total_price_text {
+        font-size: 36rpx;
+        font-weight: bold;
+        color: var(--themeColor);
+      }
+    }
+
+    view {
+      font-size: 26rpx;
+    }
+    .freight {
+      font-size: 24rpx;
+      color: #666;
+    }
+  }
+
+  .all_sum_warp {
+    flex: 2;
+    height: 70rpx;
+    background: linear-gradient(90deg,#ff6034,#ee0a24);
+    color: #fff;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35rpx;
+    margin-right: 20rpx;
+  }
+}
