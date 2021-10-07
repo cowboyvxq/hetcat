@@ -82,6 +82,24 @@
   color: var(--themeColor);
   font-size: 34rpx;
 }
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool {
+  display: flex;
+  border: solid #ccc 2rpx;
+}
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool view {
+  width: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+}
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool .num {
+  width: 60rpx;
+  color: #666;
+  border-right: solid #ccc 2rpx;
+  border-left: solid #ccc 2rpx;
+  text-align: center;
+}
 .cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .stepper {
   width: 80px;
   height: 26px;
