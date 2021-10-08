@@ -33,6 +33,7 @@ Page({
             trolley:trolley,
             count:mount + extent
         })
+        setCart(cart);
     },
     onShow() {
         //收货地址接收

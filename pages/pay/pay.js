@@ -37,6 +37,7 @@ Page({
             address
         })
     },
+    
     //支付
     async play() {
         try {
@@ -46,6 +47,10 @@ Page({
                     url: '/pages/auth/auth',
                 })
             } else {
+                wx.navigateTo({
+                    url: '/pages/order/order'
+                });
+                this.onLoad();
                 //订单参数
                 const order_price = this.data.totalPrice;
                 const consignee_add = this.data.address.all;
@@ -76,9 +81,9 @@ Page({
                 newCart = newCart.filter(v => !v.checked);
                 wx.setStorageSync("cart", newCart);
                 // 支付成功了 跳转到订单页面
-                wx.navigateTo({
-                    url: '/pages/order/index'
-                });
+                // wx.navigateTo({
+                //     url: '/pages/order/order'
+                // });
             }
         } catch (err) {
             console.log(err);
