@@ -86,10 +86,10 @@ Page({
     },
     // 跳转购物车
     goCart() {
-        this.onShow();
         wx.switchTab({
             url: '/pages/cart/cart',
         })
+       this.onShow();
     },
     onClose() {
         this.setData({

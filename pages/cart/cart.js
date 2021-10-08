@@ -25,19 +25,8 @@ Page({
       token:wx.getStorageSync('userInfo')
     },
     onLoad() {
-        let token = wx.getStorageSync('userInfo');
-        if(token) {
-            let trolley = wx.getStorageSync('trolley') || [];
-            let cart = wx.getStorageSync('cart') || [];
-            console.log(cart);
-            let mount = wx.getStorageSync('cart').length;
-            let extent = wx.getStorageSync('trolley').length;
-            this.setData({
-                trolley:trolley,
-                count:mount + extent
-            })
+        const cart = wx.getStorageSync('cart') || [];
             this.setCart(cart);
-        }
     },
     onShow() {
         let token = wx.getStorageSync('userInfo');
@@ -49,9 +38,31 @@ Page({
                 })
                 //购物车接收
             const cart = wx.getStorageSync('cart') || [];
-            this.setCart(cart);
             // 存储订单
+            let trolley = wx.getStorageSync('trolley') || [];
+            // let cart = wx.getStorageSync('cart') || [];
+            console.log(cart);
+            let mount = wx.getStorageSync('cart').length;
+            let extent = wx.getStorageSync('trolley').length;
+            this.setData({
+                trolley:trolley,
+                count:mount + extent,
+                cart:cart
+            })
+            this.setCart(cart);
         }
+        // if(token) {
+        //     let trolley = wx.getStorageSync('trolley') || [];
+        //     let cart = wx.getStorageSync('cart') || [];
+        //     console.log(cart);
+        //     let mount = wx.getStorageSync('cart').length;
+        //     let extent = wx.getStorageSync('trolley').length;
+        //     this.setData({
+        //         trolley:trolley,
+        //         count:mount + extent
+        //     })
+        //     this.setCart(cart);
+        // } 
     },
     // // 去登陆
     // goLogin() {

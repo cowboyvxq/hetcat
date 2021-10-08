@@ -28,7 +28,8 @@
         </view>
         <!-- 图片 -->
         <navigator class="cart_img_wrap">
-          <image src="{{item.goods_small_logo}}" mode="widthFix" />
+          <image wx:if="{{item.goods_small_logo}}" src="{{item.goods_small_logo}}" mode="widthFix" />
+          <view wx:else class="no_photo">暂无图片</view>
         </navigator>
         <!-- 信息 -->
         <view class="cart_info_wrap">
@@ -83,7 +84,7 @@
       </view> -->
   </view>
 </view>
-<view class="login_tips"  wx:else>请先登陆~</view>
+<!-- <view class="login_tips"  wx:else>请先登陆~</view> -->
 <!-- 结算窗口 -->
 <view class="footer_tool">
   <view class="all_chk_warp">

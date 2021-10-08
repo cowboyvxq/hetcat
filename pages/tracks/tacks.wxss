@@ -30,7 +30,21 @@
   -webkit-line-clamp: 2;
   font-size: 28rpx;
 }
-.collect_content .collect_main navigator .goods_info .info_price {
+.collect_content .collect_main navigator .goods_info .buy_number {
+  color: #a8a6a6;
+  font-size: 24rpx;
+}
+.collect_content .collect_main navigator .goods_info .list_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20rpx;
+}
+.collect_content .collect_main navigator .goods_info .list_info .info_price {
   color: var(--themeColor);
   font-size: 32rpx;
+}
+.collect_content .collect_main navigator .goods_info .list_info .sales {
+  font-size: 24rpx;
+  color: #999696;
 }
