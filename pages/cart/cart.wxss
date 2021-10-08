@@ -145,6 +145,19 @@
   border-radius: 10rpx;
   font-weight: 600;
 }
+.login_tips {
+  font-size: 34rpx;
+  color: #f02;
+  width: 250rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 250rpx auto;
+  border: solid #f01 4rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
 .footer_tool {
   display: flex;
   position: fixed;

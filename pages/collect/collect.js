@@ -29,8 +29,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onShow: function(options) {
-        const collect = wx.getStorageSync('collect');
-        this.setData({ collect })
+        let token = wx.getStorageSync('userInfo');
+        if(token) {
+            const collect = wx.getStorageSync('collect');
+            this.setData({ collect })
+        }
     },
     //Tabs切换
     // tabsItemChange(e) {

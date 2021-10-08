@@ -9,12 +9,13 @@ Page({
         //收藏数量
         collectNumber: 0,
         // 浏览数量
-        trackNumber:0
+        trackNumber:0,
+        token:wx.getStorageSync('userInfo'),
     },
     // 退出登录
     loginOut() {
         wx.removeStorageSync('userInfo');
-        this.onLoad();
+        this.onShow();
     },
     // 全部订单
     allOrder() {

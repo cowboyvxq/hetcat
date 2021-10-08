@@ -21,31 +21,51 @@ Page({
         // input默认是1  
       num: 1,  
       // 使用data数据对象设置样式名  
-      minusStatus: 'disabled'  
+      minusStatus: 'disabled',
+      token:wx.getStorageSync('userInfo')
     },
     onLoad() {
-        let trolley = wx.getStorageSync('trolley') || [];
-        let cart = wx.getStorageSync('cart') || [];
-        console.log(cart);
-        let mount = wx.getStorageSync('cart').length;
-        let extent = wx.getStorageSync('trolley').length;
-        this.setData({
-            trolley:trolley,
-            count:mount + extent
-        })
-        setCart(cart);
+        let token = wx.getStorageSync('userInfo');
+        if(token) {
+            let trolley = wx.getStorageSync('trolley') || [];
+            let cart = wx.getStorageSync('cart') || [];
+            console.log(cart);
+            let mount = wx.getStorageSync('cart').length;
+            let extent = wx.getStorageSync('trolley').length;
+            this.setData({
+                trolley:trolley,
+                count:mount + extent
+            })
+            this.setCart(cart);
+        }
     },
     onShow() {
-        //收货地址接收
-        const address = wx.getStorageSync('address');
-        this.setData({
-                address
-            })
-            //购物车接收
-        const cart = wx.getStorageSync('cart') || [];
-        this.setCart(cart);
-        // 存储订单
+        let token = wx.getStorageSync('userInfo');
+        if(token) {
+            //收货地址接收
+            const address = wx.getStorageSync('address');
+            this.setData({
+                    address
+                })
+                //购物车接收
+            const cart = wx.getStorageSync('cart') || [];
+            this.setCart(cart);
+            // 存储订单
+        }
     },
+    // // 去登陆
+    // goLogin() {
+    //     let token = wx.getStorageSync('userInfo');
+    //     if(!token) {
+    //         this.onShow();
+    //         wx.navigateTo({
+    //           url: '/pages/login/login',
+    //         })
+    //     } else {
+    //         this.onShow();
+    //         this.setCart(cart);
+    //     }
+    // },
 
     //添加收货地址事件
     async addressChoose() {
@@ -75,7 +95,7 @@ Page({
         const { trolley } = this.data;
         const index = trolley.findIndex(v => v.detailData1[0].itemInfo.itemId === id);
         trolley[index].checked = !trolley[index].checked;
-        // this.setCart(trolley);
+        this.setCart(trolley);
         console.log(id);
     },
     // 全选按钮改变

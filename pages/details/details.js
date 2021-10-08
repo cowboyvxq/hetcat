@@ -85,10 +85,10 @@ goLogin() {
 },
   // 跳转购物车
   goCart() {
-    this.onShow();
     wx.switchTab({
       url: '/pages/cart/cart',
     }) 
+    this.onShow();
   },
   // 页面以及类名切换
   toggleClass(e) {

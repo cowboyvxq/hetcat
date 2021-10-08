@@ -86,9 +86,9 @@ Page({
     },
     // 跳转购物车
     goCart() {
-        this.onLoad();
+        this.onShow();
         wx.switchTab({
-          url: '/pages/cart/cart',
+            url: '/pages/cart/cart',
         })
     },
     onClose() {

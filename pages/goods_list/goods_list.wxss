@@ -27,7 +27,7 @@ navigator .goods_info .info_name {
   font-size: 28rpx;
 }
 navigator .goods_info .buy_number {
-  color: #666;
+  color: #a8a6a6;
   font-size: 24rpx;
 }
 navigator .goods_info .list_info {

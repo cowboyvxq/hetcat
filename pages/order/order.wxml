@@ -25,5 +25,6 @@
       </navigator>
     </view>
   </view>
-<view class="timeout">请在{{minutes}}分{{seconds}}秒内支付订单，否则订单取消</view>
+<view class="timeout" wx:if="{{orders}}">请在{{minutes}}分{{seconds}}秒内支付订单，否则订单取消</view>
+<view wx:else class="create_order">还没订单呢，赶紧去创建吧~</view>
 </Tabs>

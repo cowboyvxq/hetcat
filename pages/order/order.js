@@ -25,7 +25,7 @@ Page({
         //     "order_price": 8888,
         //     "create_time": 1614798734
         // }],
-        orders: wx.getStorageSync('order'),
+        orders: '',
         // 收货地址
         address: wx.getStorageSync('address'),
         //Tabs数据
@@ -51,7 +51,10 @@ Page({
     },
     onLoad() {
         let time = 900;
-        let orders = wx.getStorageSync('order');
+        // let orders = wx.getStorageSync('order');
+        this.setData({
+            orders:wx.getStorageSync('order')
+        })
         setInterval( () => {
             var minute = parseInt(time / 60);
             var second = parseInt(time % 60);

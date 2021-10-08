@@ -7,7 +7,11 @@
         </view>
         <view class="goods_info">
           <view class="info_name">{{item.goods_name}}</view>
-          <view class="info_price">¥{{item.goods_price}}</view>
+          <view class="buy_number">{{item.goods_price + item.upd_time % 40 + 30}}+人付款</view>
+          <view class="list_info">
+        <view class="info_price">¥{{item.goods_price}}</view>
+        <view class="sales">月销{{item.goods_price}}</view>
+        </view>
         </view>
       </navigator>
     </view>

@@ -33,7 +33,7 @@ page {
 .user_info .user_login {
   position: relative;
   height: 70vw;
-  background-color: #a2fca2;
+  background-color: #73c1f5;
 }
 .user_info .user_login navigator {
   position: absolute;
@@ -44,7 +44,7 @@ page {
   border: 6rpx solid #fff;
   border-radius: 10rpx;
   text-align: center;
-  color: #f863c6;
+  color: #f8f5f7;
   font-weight: bold;
 }
 .user_content {
