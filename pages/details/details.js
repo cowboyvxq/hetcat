@@ -42,10 +42,10 @@ Page({
       if(index !== 0) {
         wx.setStorageSync('trolley', [...trolley,detailsData1]);
         let mount = wx.getStorageSync('cart').length;
-      let extent = wx.getStorageSync('trolley').length;
+      // let extent = wx.getStorageSync('trolley').length;
       this.setData({
       // console.log(detailsData1.detailData1[0].itemInfo.itemId);
-        count:mount + extent,
+        count:mount,
         flag:false
       })
       } else {

@@ -30,7 +30,6 @@ Page({
     },
     onShow: function () {
         const userInfo = wx.getStorageSync('userInfo');
-        console.log(userInfo);
         if (userInfo) {
             const collect = wx.getStorageSync('collect') || [];
             this.setData({

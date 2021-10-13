@@ -19,10 +19,10 @@ Page({
     GoodInfo: {},
     onLoad() {
         let mount = wx.getStorageSync('cart').length;
-        let extent = wx.getStorageSync('trolley').length;
+        // let extent = wx.getStorageSync('trolley').length;
         // console.log(mount + extent);
         this.setData({
-            count:mount + extent
+            count:mount
         })
     },
     //获取详情数据
@@ -74,9 +74,9 @@ Page({
                 mask: true
             })
             let mount = wx.getStorageSync('cart').length;
-        let extent = wx.getStorageSync('trolley').length;
+        // let extent = wx.getStorageSync('trolley').length;
             this.setData({
-                count:mount + extent
+                count:mount
             })
         } else {
             this.setData({

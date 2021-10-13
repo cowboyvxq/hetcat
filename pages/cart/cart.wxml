@@ -73,7 +73,7 @@
         </view>
       </view>
     </block>
-    <block wx:if="{{token && count === 0 }}">
+    <block wx:if="{{cart.length === 0}}">
     <view class="tips_content">
       <image class="cart-img" mode="widthFix" src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"></image>
       <view class="shopping" bindtap="goCategory">购物车空空如也，去逛逛~</view>
@@ -84,7 +84,7 @@
       </view> -->
   </view>
 </view>
-<!-- <view class="login_tips"  wx:else>请先登陆~</view> -->
+<view class="login_tips"  wx:if="{{!token}}">请先登陆~</view>
 <!-- 结算窗口 -->
 <view class="footer_tool">
   <view class="all_chk_warp">

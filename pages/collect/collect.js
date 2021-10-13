@@ -32,7 +32,9 @@ Page({
         let token = wx.getStorageSync('userInfo');
         if(token) {
             const collect = wx.getStorageSync('collect');
-            this.setData({ collect })
+            this.setData({ 
+                collect:collect
+            })
         }
     },
     //Tabs切换
