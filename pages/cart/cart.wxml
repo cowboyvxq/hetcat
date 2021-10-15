@@ -1,16 +1,16 @@
 <!-- 收货地址添加 -->
-<view class="review_address_row">
-  <!-- 收货按钮 -->
-  <view class="address_btn" wx:if="{{!address.cityName}}">
-    <button type="primary" wx:if="{{count > 0}}" plain bindtap="addressChoose">添加收货地址</button>
-  </view>
+<view class="review_address_row" wx:if="{{token}}">
   <!-- 收货地显示 -->
-  <view class="user_info" wx:else>
+  <view class="user_info" wx:if="{{token && address.all}}">
     <view class="info">
       <view class="info_name">{{address.userName}}</view>
       <view class="info_address">{{address.all}}</view>
     </view>
     <view class="phone">{{address.telNumber}}</view>
+  </view>
+  <!-- 收货按钮 -->
+  <view class="address_btn" wx:else>
+    <button type="primary" wx:if="{{count > 0}}" plain bindtap="addressChoose">添加收货地址</button>
   </view>
 </view>
 <!-- 购物车内容 -->
@@ -84,9 +84,9 @@
       </view> -->
   </view>
 </view>
-<view class="login_tips"  wx:if="{{!token}}">请先登陆~</view>
+<navigator url="/pages/login/login" class="login_tips"  wx:if="{{!token}}">请先登陆~</navigator>
 <!-- 结算窗口 -->
-<view class="footer_tool">
+<view class="footer_tool" wx:if="{{token && count > 0}}">
   <view class="all_chk_warp">
     <checkbox-group bindchange="handleItemAllChange">
       <checkbox checked="{{allChecked}}" />

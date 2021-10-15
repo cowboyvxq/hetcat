@@ -28,6 +28,9 @@ Page({
             phoneNumber: '400-786-4134',
         })
     },
+    onLoad:function() {
+        
+    },
     onShow: function () {
         const userInfo = wx.getStorageSync('userInfo');
         if (userInfo) {
@@ -35,6 +38,10 @@ Page({
             this.setData({
                 userInfo,
                 collectNumber: collect.length
+            })
+        } else {
+            this.setData({
+                collectNumber:0
             })
         }
         const track = wx.getStorageSync('track') || [];
