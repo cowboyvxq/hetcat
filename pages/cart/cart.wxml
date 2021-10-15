@@ -1,16 +1,16 @@
 <!-- 收货地址添加 -->
 <view class="review_address_row" wx:if="{{token}}">
   <!-- 收货地显示 -->
-  <view class="user_info" wx:if="{{token && address.all}}">
+  <view class="user_info" wx:if="{{cart.length > 0 && isShow}}">
     <view class="info">
       <view class="info_name">{{address.userName}}</view>
       <view class="info_address">{{address.all}}</view>
     </view>
     <view class="phone">{{address.telNumber}}</view>
   </view>
-  <!-- 收货按钮 -->
-  <view class="address_btn" wx:else>
-    <button type="primary" wx:if="{{count > 0}}" plain bindtap="addressChoose">添加收货地址</button>
+  <!-- 添加收货按钮 -->
+  <view class="address_btn" wx:if="{{!isShow && cart.length > 0}}">
+    <button type="primary" plain bindtap="addressChoose">添加收货地址</button>
   </view>
 </view>
 <!-- 购物车内容 -->
@@ -45,33 +45,33 @@
         </view>
       </view>
       <!-- 2 -->
-      <view class="cart_item" wx:for="{{trolley}}" wx:key="index">
+      <!-- <view class="cart_item" wx:for="{{trolley}}" wx:key="index"> -->
         <!-- 复选框 -->
-        <view class="cart_chk_wrap">
+        <!-- <view class="cart_chk_wrap">
           <checkbox-group data-id="{{item.detailData1[0].itemInfo.itemId}}" bindchange="changeState">
             <checkbox checked="{{item.checked}}" />
           </checkbox-group>
-        </view>
+        </view> -->
         <!-- 图片 -->
-        <navigator class="cart_img_wrap">
+        <!-- <navigator class="cart_img_wrap">
           <image class="cart_pic" src="{{item.detailData1[0].topImages[0]}}"/>
-        </navigator>
+        </navigator> -->
         <!-- 信息 -->
-        <view class="cart_info_wrap">
+        <!-- <view class="cart_info_wrap">
           <view class="info_name">{{item.detailData1[0].itemInfo.title}}</view>
           <view class="info_price_wrap">
             <view class="price">¥{{item.detailData1[0].itemInfo.lowNowPrice}}</view>
-            <view class="stepper">
+            <view class="stepper"> -->
           <!-- 减号 -->
-          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- <text class="{{minusStatus}}" bindtap="bindMinus">-</text> -->
           <!-- 数值 -->
-          <input type="number" bindchange="bindManual" value="{{num}}" />
+          <!-- <input type="number" bindchange="bindManual" value="{{num}}" /> -->
           <!-- 加号 -->
-          <text class="normal" bindtap="bindPlus">+</text>
-        </view>
-          </view>
-        </view>
-      </view>
+          <!-- <text class="normal" bindtap="bindPlus">+</text> -->
+        <!-- </view> -->
+          <!-- </view> -->
+        <!-- </view> -->
+      <!-- </view> -->
     </block>
     <block wx:if="{{cart.length === 0}}">
     <view class="tips_content">

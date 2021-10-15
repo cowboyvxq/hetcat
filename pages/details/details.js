@@ -162,9 +162,9 @@ goLogin() {
    */
   onLoad: function (options) {
     let mount = wx.getStorageSync('cart').length;
-    let extent = wx.getStorageSync('trolley').length;
+    // let extent = wx.getStorageSync('trolley').length;
       this.setData({
-        count:mount + extent,
+        count:mount,
         detailsData1:detailsData1,
         // 轮播图
         swiperList:detailsData1.detailData1[0].topImages,

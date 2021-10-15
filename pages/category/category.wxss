@@ -10,15 +10,17 @@ page {
 }
 .cate_container .left_menu {
   flex: 2;
+  box-sizing: border-box;
 }
 .cate_container .left_menu .cate_title {
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 70rpx;
+  line-height: 70rpx;
   text-align: center;
+  border-left: 6rpx solid transparent;
 }
-.cate_container .left_menu .active {
+.cate_container .left_menu .cate_title.active {
   color: var(--themeColor);
-  border-left: 8rpx solid currentColor;
+  border-left: 6rpx solid currentColor;
 }
 .cate_container .right_menu {
   flex: 5;

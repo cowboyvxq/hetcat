@@ -9,14 +9,16 @@ page {
   display: flex;
   .left_menu{
     flex: 2;
+    box-sizing: border-box;
     .cate_title{
-      height: 80rpx;
-      line-height: 80rpx;
+      height: 70rpx;
+      line-height: 70rpx;
       text-align: center;
-    }
-    .active {
-      color: var(--themeColor);
-      border-left: 8rpx solid currentColor;
+      border-left: 6rpx solid transparent;
+     &.active {
+        color: var(--themeColor);
+        border-left: 6rpx solid currentColor;
+      }
     }
   }
   .right_menu{

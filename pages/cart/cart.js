@@ -28,7 +28,8 @@ Page({
         num: 1,
         // 使用data数据对象设置样式名  
         minusStatus: 'disabled',
-        token:''
+        token:'',
+        isShow:false
     },
     onLoad() {
         // const cart = wx.getStorageSync('cart') || [];
@@ -41,13 +42,11 @@ Page({
         wx.getStorage({
             key: 'cart',
             success:(res) => {
-                console.log(this,res);
                 //购物车接收
                 const cart = wx.getStorageSync('cart') || [];
                 // 存储订单
                 let trolley = wx.getStorageSync('trolley') || [];
                 // let cart = wx.getStorageSync('cart') || [];
-                console.log(cart);
                 let mount = wx.getStorageSync('cart').length;
                 // let extent = wx.getStorageSync('trolley').length;
                 this.setData({
@@ -91,13 +90,11 @@ Page({
         wx.getStorage({
             key: 'cart',
             success:(res) => {
-                console.log(this,res);
                 //购物车接收
                 const cart = wx.getStorageSync('cart') || [];
                 // 存储订单
                 // let trolley = wx.getStorageSync('trolley') || [];
                 // let cart = wx.getStorageSync('cart') || [];
-                console.log(cart);
                 let mount = wx.getStorageSync('cart').length;
                 // let extent = wx.getStorageSync('trolley').length;
                 this.setData({
@@ -122,6 +119,9 @@ Page({
             let address = await chooseAddress();
             address.all = address.provinceName + address.cityName + address.countyName + address.detailInfo;
             wx.setStorageSync('address', address)
+            this.setData({
+                isShow:true
+            })
         } catch (err) {
             console.log(err);
         }
@@ -137,7 +137,6 @@ Page({
         const index = cart.findIndex(v => v.goods_id === id);
         cart[index].checked = !cart[index].checked;
         this.setCart(cart);
-        console.log(id);
     },
     changeState(e) {
         const {
@@ -149,7 +148,6 @@ Page({
         const index = trolley.findIndex(v => v.detailData1[0].itemInfo.itemId === id);
         trolley[index].checked = !trolley[index].checked;
         this.setCart(trolley);
-        console.log(id);
     },
     // 全选按钮改变
     handleItemAllChange() {
@@ -187,7 +185,6 @@ Page({
             totalNum,
             address
         } = this.data;
-        console.log(totalNum, address);
         if (!address.userName) {
             await showToast('未填联系方式')
         } else if (totalNum === 0) {

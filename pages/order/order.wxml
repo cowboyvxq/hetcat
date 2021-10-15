@@ -19,6 +19,7 @@
           <view class="total">x{{item.num}}</view>
           </view>
           <view class="pay_text">
+          <view class="total_money">总计：<text>￥{{item.goods_price * item.num}}</text> </view>
           <view class="await_pay">待支付</view>
           </view>
         </view>
